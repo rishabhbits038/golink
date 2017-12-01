@@ -3,7 +3,6 @@ package golink
 import (
 	"os/exec"
 	"fmt"
-	"encoding/json"
 )
 
 func CreateSymLink(source string, destination string) bool {
