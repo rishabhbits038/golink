@@ -21,7 +21,7 @@ func main() {
 
 	var ans bool
 	if *source!="" && *destination!="" {
-		ans=golink.createSymLink(source, destination);
+		ans=golink.CreateSymLink(source, destination);
 	}
 
 	if ans==true {
