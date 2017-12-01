@@ -9,7 +9,7 @@ func CreateSymLink(source string, destination string) bool {
 	cmdRemove := exec.Command("rm", "-rf", source);
 	errRemove:=cmdRemove.Run();
 	if errRemove != nil ==true{
-		fmt.Println("Unable to remove file "+errRemove)
+		fmt.Println("Unable to remove file "+string(errRemove))
 		return false
 	}
 
