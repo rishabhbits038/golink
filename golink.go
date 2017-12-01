@@ -9,6 +9,7 @@ import (
 func CreateSymLink(source string, destination string) bool {
 	out, errCheck:= exec.Command("test", "-d", source, "&&", "echo", "true", "||", "echo", "false").Output();
 	if errCheck !=nil {
+		fmt.Println(errCheck);
 		fmt.Println("Unable to check for the directory")
 	}
 	var checkDir bool
