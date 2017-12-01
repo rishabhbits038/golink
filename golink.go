@@ -7,18 +7,10 @@ import (
 )
 
 func CreateSymLink(source string, destination string) bool {
-	out, errCheck:= exec.Command("test", "-d", source).Output();
-	if errCheck !=nil {
-		fmt.Println(errCheck);
-		fmt.Println("Unable to check for the directory")
-	}
-	var checkDir bool
-	json.Unmarshal(out, &checkDir)
-
 	cmdRemove := exec.Command("rm", "-rf", source);
 	errRemove:=cmdRemove.Run();
-	if errRemove != nil && checkDir==true{
-		fmt.Println(errRemove)
+	if errRemove != nil ==true{
+		fmt.Println("Unable to remove file "+errRemove)
 		return false
 	}
 
