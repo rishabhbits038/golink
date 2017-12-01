@@ -13,10 +13,10 @@ func main() {
 	flag.Parse()
 
 	if*source=="" {
-		fmt.Print("Invalid Source")
+		fmt.Println("Invalid Source")
 	}
 	if *destination=="" {
-		fmt.Print("Invalid Destination")
+		fmt.Println("Invalid Destination")
 	}
 
 	var ans bool
@@ -25,8 +25,8 @@ func main() {
 	}
 
 	if ans==true {
-		fmt.Print("Symlink created successfully")
+		fmt.Println("Symlink created successfully")
 	} else {
-		fmt.Print("Unable to create symlink")
+		fmt.Println("Unable to create symlink")
 	}
 }

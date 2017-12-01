@@ -2,18 +2,24 @@ package golink
 
 import (
 	"os/exec"
-	"log"
 	"fmt"
 )
 
 func CreateSymLink(source string, destination string) bool {
-	ans:=true
-	cmd := exec.Command("rm", "-rf", "~/dev/src/event_enricher/vendor/bitbucket.org/myntra/go_template_manager*");
-	err:=cmd.Run();
-	if err != nil {
-		ans=false
-		log.Fatal(err)
+	cmdRemove := exec.Command("rm", "-rf", source);
+	errRemove:=cmdRemove.Run();
+	if errRemove != nil {
+		fmt.Println(errRemove)
+		return false
 	}
-	fmt.Printf("Removed directory");
-	return ans
+
+	cmdLink := exec.Command("ln", "-s", destination);
+	errLink:=cmdLink.Run();
+
+	if errLink != nil {
+		fmt.Println(errLink)
+		return false
+	}
+
+	return true
 }
